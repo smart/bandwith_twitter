@@ -1,0 +1,50 @@
+--- 
+vendor/plugins/factory_girl: 
+  squashed: true
+  url: git://github.com/thoughtbot/factory_girl.git
+  type: git
+  revision: 964dd5e233ed90051fb77971f00d7b4a6e2ac7b2
+  branch: master
+  remote: braid/vendor/plugins/factory-girl
+vendor/plugins/webrat: 
+  squashed: true
+  url: git://github.com/brynary/webrat.git
+  type: git
+  revision: 6bfdcc54cc82b23d268987e758d7676db1061fee
+  branch: master
+  remote: braid/vendor/plugins/webrat
+vendor/plugins/rspec-rails: 
+  squashed: true
+  url: git://github.com/dchelimsky/rspec-rails.git
+  type: git
+  revision: 92052fc4f0d95fdd69be4552b94133c427834ccb
+  branch: master
+  remote: braid/vendor/plugins/rspec-rails
+vendor/plugins/resource_controller: 
+  squashed: true
+  url: git://github.com/giraffesoft/resource_controller.git
+  type: git
+  revision: 3a19970c8a437d5b16e77faef3573b8c6ff768cd
+  branch: master
+  remote: braid/vendor/plugins/resource-controller
+vendor/plugins/rspec: 
+  squashed: true
+  url: git://github.com/dchelimsky/rspec.git
+  type: git
+  revision: 2df9a0ebff3b1fa05f7d60d7b0b72c551efcf1a7
+  branch: master
+  remote: braid/vendor/plugins/rspec
+vendor/rails: 
+  squashed: true
+  url: git://github.com/rails/rails.git
+  type: git
+  revision: 84a755b27e615da4a51b6e4c042491b6d807bcf8
+  branch: 2-3-stable
+  remote: braid/vendor/rails
+vendor/plugins/cucumber: 
+  squashed: true
+  url: git://github.com/aslakhellesoy/cucumber.git
+  type: git
+  revision: 4d2213b736b5dd0df9cda30ef814eacfb8f1cbe4
+  branch: master
+  remote: braid/vendor/plugins/cucumber

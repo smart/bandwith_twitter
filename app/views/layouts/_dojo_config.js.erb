@@ -1,0 +1,9 @@
+var loadedFrom = document.location.protocol + '//' + document.location.host;
+
+var djConfig = {
+  baseUrl: loadedFrom + '/javascripts/compiled/dojo/',
+  enableMozDomContentLoaded: true,
+  parseOnLoad: true,
+  isDebug: false,
+  locale: "<%= @dojo_locale || 'en-us' %>"
+};
