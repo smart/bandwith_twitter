@@ -1,0 +1,106 @@
+--- !ruby/object:Gem::Specification 
+name: braid
+version: !ruby/object:Gem::Version 
+  version: "0.5"
+platform: ruby
+authors: 
+- Cristi Balan
+- Norbert Crombach
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-10-28 00:00:00 -04:00
+default_executable: braid
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: main
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 2.8.0
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: open4
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 0.9.6
+    version: 
+description: A simple tool for tracking vendor branches in git.
+email: evil@che.lu
+executables: 
+- braid
+extensions: []
+
+extra_rdoc_files: []
+
+files: 
+- bin/braid
+- braid.gemspec
+- lib/braid/command.rb
+- lib/braid/commands/add.rb
+- lib/braid/commands/diff.rb
+- lib/braid/commands/remove.rb
+- lib/braid/commands/setup.rb
+- lib/braid/commands/update.rb
+- lib/braid/config.rb
+- lib/braid/mirror.rb
+- lib/braid/operations.rb
+- lib/braid.rb
+- LICENSE
+- Rakefile
+- README.textile
+- test/braid_test.rb
+- test/config_test.rb
+- test/fixtures/shiny/README
+- test/fixtures/skit1/layouts/layout.liquid
+- test/fixtures/skit1/preview.png
+- test/fixtures/skit1.1/layouts/layout.liquid
+- test/fixtures/skit1.2/layouts/layout.liquid
+- test/integration/adding_test.rb
+- test/integration/updating_test.rb
+- test/integration_helper.rb
+- test/mirror_test.rb
+- test/operations_test.rb
+- test/test_helper.rb
+has_rdoc: true
+homepage: http://evil.che.lu/projects/braid
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --line-numbers
+- --inline-source
+- --title
+- braid
+- --main
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: braid
+rubygems_version: 1.3.3
+signing_key: 
+specification_version: 2
+summary: A simple tool for tracking vendor branches in git.
+test_files: []
+
