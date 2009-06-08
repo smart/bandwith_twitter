@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20090608160736
+#
+# Table name: user_twitter_timelines
+#
+#  id                        :integer         not null, primary key
+#  user_id                   :integer         not null
+#  screen_name               :string(255)     not null
+#  band_with_twitter_user_id :integer
+#  created_at                :datetime
+#  updated_at                :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  screen_name: MyString
+  band_with_twitter_user_id: 1
+
+two:
+  user_id: 1
+  screen_name: MyString
+  band_with_twitter_user_id: 1
