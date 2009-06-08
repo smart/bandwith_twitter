@@ -1,0 +1,2 @@
+module Gnip::QueueHelper
+end
