@@ -19,4 +19,9 @@ class UserTwitterTimeline < ActiveRecord::Base
   has_many :tweets,
     :through => :twitter_user,
     :class_name => 'BandWith::Twitter::Status'
+  
+  validates_uniqueness_of :screen_name,
+    :scope => :user_id,
+    :message => 'is already registered'
+  
 end

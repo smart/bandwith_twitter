@@ -1,2 +1,9 @@
-- @timelines.each do |timeline|
-  %p= timeline.screen_name
+- unless @timelines.blank?
+  %br
+  - @timelines.each do |timeline|
+    %span= timeline.screen_name
+    %br
+- else
+  %br
+  %span No twitter accounts defined.
+  %br

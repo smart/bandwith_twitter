@@ -62,3 +62,98 @@ dojo.behavior.add({
 		}
 	}
 });
+
+dojo.behavior.add({
+	'#create_twitter_account': {
+		found: function(node) {
+			var textbox = new dijit.form.TextBox({
+				id: 'create_twitter_account'
+			}, node);
+			
+			dojo.connect(textbox, 'onKeyDown', function(event){
+				if (event.keyCode == dojo.keys.ENTER) {					
+					var data = dojo.toJson({timeline: {screen_name: textbox.attr('value')}});
+
+					dojo.xhrPost({
+						handleAs: 'json',
+						postData: data,
+						headers: {
+							'Content-Type': 'application/json',
+							'Accept': 'application/json'
+						},
+						url: '/account/timelines.json',
+						load: function(data){
+							var html = ([
+								'<p>',
+								'Successfully added screen name: ',
+								data.timeline.screen_name,
+								'</p>'
+							]).join('');
+							var flash = dojo.byId('twitter_account_state');
+							
+							dojo.html.set(flash, html);
+							dojo.attr(flash, 'class', 'message notice');
+						},
+						error: function(error){
+							var errors = dojo.fromJson(error.responseText);
+							var html = errors.map(function(error){return '<p>' + error + '</p>';}).join();
+							var flash = dojo.byId('twitter_account_state');
+							
+							dojo.html.set(flash, html);
+							dojo.attr(flash, 'class', 'message error');
+						},
+						handle: function() {
+							dijit.byId('timelines').refresh();
+						}
+					});
+				}
+			});
+		}
+	},
+	'#create_twitter_search_term': {
+		found: function(node) {
+			var textbox = new dijit.form.TextBox({
+				id: 'create_twitter_search_term'
+			}, node);
+			
+			dojo.connect(textbox, 'onKeyDown', function(event){
+				if (event.keyCode == dojo.keys.ENTER) {					
+					var data = dojo.toJson(); //TODO
+
+					dojo.xhrPost({
+						handleAs: 'json',
+						postData: data,
+						headers: {
+							'Content-Type': 'application/json',
+							'Accept': 'application/json'
+						},
+						url: '/account/search_terms.json',
+						load: function(data){
+							var html = ([
+								'<p>',
+								'Successfully added search term: ',
+								data.search_term,
+								'</p>'
+							]).join('');
+							var flash = dojo.byId('twitter_search_term_state');
+							
+							dojo.html.set(flash, html);
+							dojo.attr(flash, 'class', 'message notice');
+						},
+						error: function(error){
+							var errors = dojo.fromJson(error.responseText);
+							var html = errors.map(function(error){return '<p>' + error + '</p>';}).join();
+							var flash = dojo.byId('twitter_search_term_state');
+							
+							dojo.html.set(flash, html);
+							dojo.attr(flash, 'class', 'message error');
+						},
+						handle: function() {
+							dijit.byId('search_terms').refresh();
+						}
+					});
+				}
+			});
+		}
+	}
+});

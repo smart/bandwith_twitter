@@ -1,2 +1,9 @@
-- @search_terms.each do |search_term|
-  %p= search_term
+- unless @search_terms.blank?
+  %br
+  - @search_terms.each do |search_term|
+    %span= search_term
+    %br
+- else
+  %br
+  %span No search terms defined.
+  %br

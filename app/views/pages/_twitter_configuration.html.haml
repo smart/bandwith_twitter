@@ -1,5 +1,20 @@
-:plain
-  This
-  is
-  a
-  test.
+%h1 Search Terms
+%p
+  Adding a search term will tag it as relevant data for scoring purposes.
+%p
+  %label Add a search term:
+  %br
+  %input#create_twitter_search_term{ :type => 'text' }
+.flash
+  #twitter_search_term_state
+%br
+%h1 Twitter accounts
+%p
+  Adding a twitter account to the system will automatically fetch all followers and add |
+  them to the system.
+%p
+  %label Add a twitter account:
+  %br
+  %input#create_twitter_account{ :type => 'text' }
+.flash
+  #twitter_account_state

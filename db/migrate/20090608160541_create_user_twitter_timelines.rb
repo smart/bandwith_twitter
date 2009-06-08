@@ -8,8 +8,7 @@ class CreateUserTwitterTimelines < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :user_twitter_timelines, :user_id
-    add_index :user_twitter_timelines, :screen_name
+    add_index :user_twitter_timelines, [:user_id, :screen_name], :unique => true
     add_index :user_twitter_timelines, :band_with_twitter_user_id
   end
 
