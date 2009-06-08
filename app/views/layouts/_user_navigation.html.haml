@@ -1,0 +1,10 @@
+%nav#user-navigation
+  %ul
+    - if current_user
+      - navitems do |tab|
+        = tab.logout logout_path, {:class => 'first logout'}
+    - else
+      - navitems do |tab|
+        = tab.register new_account_path, {:class => 'first'}
+        = tab.login login_path, {:class => 'login'}
+  .clear

@@ -1,0 +1,22 @@
+%section.block.navi
+  %nav.secondary-navigation
+    %ul
+      %li.first{ :'data-container' => 'configuration' }
+        %a{ :href => 'javascript://' } Configuration
+      %li{ :'data-container' => 'tweets' }
+        %a{ :href => 'javascript://' } Tweets
+      %li{ :'data-container' => 'vibe_trainer' }
+        %a{ :href => 'javascript://' } Vibe Trainer
+    .clear
+  %article#configuration.content
+    %br
+    .inner
+      = render :partial => 'pages/twitter_configuration'
+  %article#tweets.content
+    %br
+    .inner
+      = render :partial => 'pages/twitter_stream'
+  %article#vibe_trainer.content
+    %br
+    .inner
+      = render :partial => 'pages/twitter_vibe_trainer'

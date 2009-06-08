@@ -4,6 +4,8 @@ class SearchTermsController < ApplicationController
   
   before_filter :require_user
   
+  layout false
+  
   def parent_model
     User
   end

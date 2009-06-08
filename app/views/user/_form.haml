@@ -8,6 +8,11 @@
 = form.text_field :email
 %br
 %br
+= form.label :organization_name
+%br
+= form.text_field :organization_name
+%br
+%br
 = form.label :password, form.object.new_record? ? nil : "Change password"
 %br
 = form.password_field :password

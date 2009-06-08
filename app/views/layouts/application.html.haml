@@ -23,7 +23,9 @@
 
     %script
       = render :partial => 'layouts/dojo_config.js'
-    = javascript_include_tag 'compiled/dojo/dojo.js'
+    = javascript_include_tag '/javascripts/compiled/dojo/dojo.js'
+    = javascript_include_tag '/javascripts/compiled/bandwith/requirements.js'
+    = javascript_include_tag 'behaviors'
 
     = yield :javascripts
     = yield :stylesheets
@@ -34,22 +36,8 @@
         %h1
           %a{ :href => '/' }
             = page_title
-        %nav#user-navigation
-          %ul
-            - if current_user
-              - navitems do |tab|
-                = tab.logout logout_path, {:class => 'first logout'}
-            - else
-              - navitems do |tab|
-                = tab.register new_account_path, {:class => 'first'}
-                = tab.login login_path, {:class => 'login'}
-          .clear
-        %nav#main-navigation
-          %ul
-            - navitems do |tab|
-              = tab.main_page root_path, {:class => 'first'}
-              = tab.my_account account_path
-          .clear
+        = render :partial => 'layouts/user_navigation'
+        = render :partial => 'layouts/main_navigation'
       #wrapper
         %section#main
           = yield
@@ -57,5 +45,4 @@
             .block
               %p
                 = copyright_text
-        %aside#sidebar
-          = yield :sidebar
+        = render :partial => 'layouts/sidebar'

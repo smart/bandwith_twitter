@@ -26,11 +26,11 @@ class User < ActiveRecord::Base
     c.require_password_confirmation = false
   end
   
-  has_many :twitter_timelines,
+  has_many :timelines,
     :class_name => 'UserTwitterTimeline',
     :foreign_key => 'user_id'
   
-  has_many :twitter_search_terms,
+  has_many :search_terms,
     :class_name => 'UserTwitterSearchTerm',
     :foreign_key => 'user_id'
 end

@@ -1,0 +1,33 @@
+%aside#sidebar
+  - if current_user
+    .block
+      %h3
+        = current_user.organization_name
+      .content
+        %p
+          %span Login:
+          %span= current_user.login
+        %p
+          %span EMail:
+          %span= current_user.email
+        %p
+          %span Registered at:
+          %br
+          %span.iso_date_time= current_user.created_at.xmlschema
+        - if current_user.last_login_at
+          %p
+            %span Last logged in at:
+            %br
+            %span.iso_date_time= current_user.last_login_at.xmlschema
+    #twitter_sidebar
+      .block
+        %h3
+          Twitter Accounts
+        .content
+          #timelines{ :'data-href' => '/account/timelines.html' }
+      .block
+        %h3
+          Search Terms
+        .content
+          #search_terms{ :'data-href' => '/account/search_terms.html' }
+  = yield :sidebar

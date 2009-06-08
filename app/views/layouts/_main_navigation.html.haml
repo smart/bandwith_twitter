@@ -1,0 +1,7 @@
+%nav#main-navigation
+  %ul
+    - navitems do |tab|
+      = tab.main_page root_path, {:class => 'first'}
+      = tab.my_account account_path
+      = tab.twitter twitter_path
+  .clear

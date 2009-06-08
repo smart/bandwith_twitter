@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resource :user_session
+  map.resource :user_session, :controller => 'user_sessions'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   map.login  '/login',  :controller => 'user_sessions', :action => 'new'
   
@@ -12,7 +12,8 @@ ActionController::Routing::Routes.draw do |map|
     gnip.resource :queue, :controller => 'queue'
   end
   
-  map.root :controller => 'index', :action => 'index'
+  map.root :controller => 'pages', :action => 'index'
+  map.twitter '/twitter', :controller => 'pages', :action => 'twitter'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
